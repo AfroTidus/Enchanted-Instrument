@@ -8,6 +8,7 @@ TagManager:
   - Blue
   - Green
   - Yellow
+  - Score
   layers:
   - Default
   - TransparentFX

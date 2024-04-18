@@ -8,11 +8,12 @@ public class Instrument : MonoBehaviour
 {
     string inputOrder = "";
     public TextMeshProUGUI display;
+    private ScoreCounter counter;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        counter = GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreCounter>();
     }
 
     // Update is called once per frame
@@ -42,24 +43,28 @@ public class Instrument : MonoBehaviour
         if (inputOrder == "ddd")
         {
             Destroy(GameObject.FindWithTag("Red"));
+            counter.calculate(1);
         }
 
         if (inputOrder == "fff")
         {
             Destroy(GameObject.FindWithTag("Blue"));
+            counter.calculate(1);
         }
 
         if (inputOrder == "jjj")
         {
             Destroy(GameObject.FindWithTag("Green"));
+            counter.calculate(1);
         }
 
         if (inputOrder == "kkk")
         {
             Destroy(GameObject.FindWithTag("Yellow"));
+            counter.calculate(1);
         }
 
-        if (inputOrder.Length == 3)
+        if (inputOrder.Length >= 3)
         {
             inputOrder = "";
             StartCoroutine(clear());
@@ -68,7 +73,7 @@ public class Instrument : MonoBehaviour
 
     IEnumerator clear ()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
         display.text = "Notes: " + inputOrder;
     }
 }
