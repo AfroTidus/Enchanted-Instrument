@@ -7,13 +7,16 @@ using UnityEngine;
 public class Instrument : MonoBehaviour
 {
     string inputOrder = "";
+    public bool result;
     public TextMeshProUGUI display;
     private ScoreCounter counter;
+    private Spawner spawn;
 
     // Start is called before the first frame update
     void Start()
     {
         counter = GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreCounter>();
+        spawn = GameObject.FindGameObjectWithTag("Spawner").GetComponent<Spawner>();
     }
 
     // Update is called once per frame
@@ -42,26 +45,62 @@ public class Instrument : MonoBehaviour
 
         if (inputOrder == "ddd")
         {
-            Destroy(GameObject.FindWithTag("Red"));
-            counter.calculate(1);
+            if (GameObject.FindWithTag("Red"))
+            {
+                Destroy(GameObject.FindWithTag("Red"));
+                counter.calculate(1);
+                spawn.SpawnTimerUpdate(0.03f);
+                counter.checkResult(1);
+            }
+            else
+            {
+                counter.checkResult(0);
+            }
         }
 
         if (inputOrder == "fff")
         {
-            Destroy(GameObject.FindWithTag("Blue"));
-            counter.calculate(1);
+            if (GameObject.FindWithTag("Blue"))
+            {
+                Destroy(GameObject.FindWithTag("Blue"));
+                counter.calculate(1);
+                spawn.SpawnTimerUpdate(0.03f);
+                counter.checkResult(1);
+            }
+            else
+            {
+                counter.checkResult(0);
+            }
         }
 
         if (inputOrder == "jjj")
         {
-            Destroy(GameObject.FindWithTag("Green"));
-            counter.calculate(1);
+            if (GameObject.FindWithTag("Green"))
+            {
+                Destroy(GameObject.FindWithTag("Green"));
+                counter.calculate(1);
+                spawn.SpawnTimerUpdate(0.03f);
+                counter.checkResult(1);
+            }
+            else
+            {
+                counter.checkResult(0);
+            }
         }
 
         if (inputOrder == "kkk")
         {
-            Destroy(GameObject.FindWithTag("Yellow"));
-            counter.calculate(1);
+            if (GameObject.FindWithTag("Yellow"))
+            {
+                Destroy(GameObject.FindWithTag("Yellow"));
+                counter.calculate(1);
+                spawn.SpawnTimerUpdate(0.03f);
+                counter.checkResult(1);
+            }
+            else
+            {
+                counter.checkResult(0);
+            }
         }
 
         if (inputOrder.Length >= 3)
