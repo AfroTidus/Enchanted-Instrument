@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.PlasticSCM.Editor.WebApi;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -9,14 +10,18 @@ public class Instrument : MonoBehaviour
     string inputOrder = "";
     public bool result;
     public TextMeshProUGUI display;
+    public Sprite[] KeyStates;
+    public GameObject Visualisation;
     private ScoreCounter counter;
     private Spawner spawn;
+    private SpriteRenderer changer;
 
     // Start is called before the first frame update
     void Start()
     {
         counter = GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreCounter>();
         spawn = GameObject.FindGameObjectWithTag("Spawner").GetComponent<Spawner>();
+        changer = Visualisation.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -26,21 +31,25 @@ public class Instrument : MonoBehaviour
         {
             inputOrder = inputOrder + "d";
             display.text = "Notes: " + inputOrder;
+            StartCoroutine(clear2(1));
         }
         if (Input.GetKeyDown("f"))
         {
             inputOrder = inputOrder + "f";
             display.text = "Notes: " + inputOrder;
+            StartCoroutine(clear2(2));
         }
         if (Input.GetKeyDown("j"))
         {
             inputOrder = inputOrder + "j";
             display.text = "Notes: " + inputOrder;
+            StartCoroutine(clear2(3));
         }
         if (Input.GetKeyDown("k"))
         {
             inputOrder = inputOrder + "k";
             display.text = "Notes: " + inputOrder;
+            StartCoroutine(clear2(4));
         }
 
         if (inputOrder == "ddd")
@@ -114,5 +123,12 @@ public class Instrument : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         display.text = "Notes: " + inputOrder;
+    }
+
+    IEnumerator clear2(int X)
+    {
+        changer.sprite = KeyStates[X];
+        yield return new WaitForSeconds(0.1f);
+        changer.sprite = KeyStates[0];
     }
 }
