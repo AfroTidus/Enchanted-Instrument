@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ScoreCounter : MonoBehaviour
 {
+    public static int HighScore;
     public int Score;
     public int Multiplier;
     public TextMeshProUGUI ScoreDisplay;
@@ -25,6 +26,11 @@ public class ScoreCounter : MonoBehaviour
             Multiplier = 8;
         }
         MultiplierDisplay.text = Multiplier + "x";
+
+        if (Score > HighScore)
+        {
+            HighScore = Score;
+        }
     }
 
     public void calculate(int X)
