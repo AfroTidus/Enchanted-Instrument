@@ -11,6 +11,7 @@ public class Instrument : MonoBehaviour
     public bool result;
     public TextMeshProUGUI display;
     public Sprite[] KeyStates;
+    public AudioSource[] KeySounds;
     public GameObject Visualisation;
     private ScoreCounter counter;
     private Spawner spawn;
@@ -60,10 +61,12 @@ public class Instrument : MonoBehaviour
                 counter.calculate(1);
                 spawn.SpawnTimerUpdate(0.03f);
                 counter.checkResult(1);
+                KeySounds[0].Play();
             }
             else
             {
                 counter.checkResult(0);
+                KeySounds[4].Play();
             }
         }
 
@@ -75,10 +78,12 @@ public class Instrument : MonoBehaviour
                 counter.calculate(1);
                 spawn.SpawnTimerUpdate(0.03f);
                 counter.checkResult(1);
+                KeySounds[1].Play();
             }
             else
             {
                 counter.checkResult(0);
+                KeySounds[4].Play();
             }
         }
 
@@ -90,10 +95,12 @@ public class Instrument : MonoBehaviour
                 counter.calculate(1);
                 spawn.SpawnTimerUpdate(0.03f);
                 counter.checkResult(1);
+                KeySounds[2].Play();
             }
             else
             {
                 counter.checkResult(0);
+                KeySounds[4].Play();
             }
         }
 
@@ -105,10 +112,12 @@ public class Instrument : MonoBehaviour
                 counter.calculate(1);
                 spawn.SpawnTimerUpdate(0.03f);
                 counter.checkResult(1);
+                KeySounds[3].Play();
             }
             else
             {
                 counter.checkResult(0);
+                KeySounds[4].Play();
             }
         }
 

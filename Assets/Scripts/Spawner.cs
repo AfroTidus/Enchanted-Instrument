@@ -10,6 +10,7 @@ public class Spawner : MonoBehaviour
     public float spawnVariable;
     public GameObject[] projectiles;
     public TextMeshProUGUI display;
+    public AudioSource backtrack;
 
 
     // Start is called before the first frame update
@@ -30,18 +31,22 @@ public class Spawner : MonoBehaviour
         if(spawnRate <= 2.0f && spawnRate > 1.5f)
         {
             display.text = "Slow";
+            backtrack.volume = 0.05f;
         }
         if (spawnRate <= 1.5f && spawnRate > 1.0f)
         {
             display.text = "Normal";
+            backtrack.volume = 0.1f;
         }
         if (spawnRate <= 1.0f && spawnRate > 0.5f)
         {
             display.text = "Rockstar";
+            backtrack.volume = 0.15f;
         }
         if (spawnRate <= 0.5f && spawnRate > 0.0f)
         {
             display.text = "Crazy Fingers";
+            backtrack.volume = 0.2f;
         }
 
         if (spawnRate < 0.0f)

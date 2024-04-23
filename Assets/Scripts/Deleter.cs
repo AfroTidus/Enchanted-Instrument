@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Deleter : MonoBehaviour
 {
+    public AudioSource fail;
     private ScoreCounter counter;
     private Spawner spawn;
     private int health;
@@ -28,6 +29,7 @@ public class Deleter : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        fail.Play();
         Destroy(collision.gameObject);
         counter.checkResult(0);
         counter.calculate(-1);
