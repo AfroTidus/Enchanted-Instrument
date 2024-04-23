@@ -69,7 +69,7 @@ public class Instrument : MonoBehaviour
             }
         }
 
-        if (inputOrder == "fdj")
+        if (inputOrder == "fjk")
         {
             if (GameObject.FindWithTag("Blue"))
             {
@@ -86,7 +86,7 @@ public class Instrument : MonoBehaviour
             }
         }
 
-        if (inputOrder == "jkj")
+        if (inputOrder == "dfj")
         {
             if (GameObject.FindWithTag("Green"))
             {
@@ -103,7 +103,7 @@ public class Instrument : MonoBehaviour
             }
         }
 
-        if (inputOrder == "kdf")
+        if (inputOrder == "jkj")
         {
             if (GameObject.FindWithTag("Yellow"))
             {

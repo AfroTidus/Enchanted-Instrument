@@ -318,7 +318,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '= jkj
+  m_text: '= dfj
 
 '
   m_isRightToLeft: 0
@@ -1041,9 +1041,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '= kdf
-
-'
+  m_text: = jkj
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 64430ca0036762543a6e54b970def8f7, type: 2}
   m_sharedMaterial: {fileID: -626037146557146523, guid: 64430ca0036762543a6e54b970def8f7, type: 2}
@@ -1178,7 +1176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '= fdj
+  m_text: '= fjk
 
 '
   m_isRightToLeft: 0
